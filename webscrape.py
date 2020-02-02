@@ -2,7 +2,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = 'http://quotes.toscrape.com/'
+# url = 'http://quotes.toscrape.com/'
+url = 'https://httpbin.org/get'
 
 # Returns requests objects
 def fetchSite(site):
