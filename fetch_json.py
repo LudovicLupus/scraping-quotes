@@ -14,14 +14,14 @@ print(f'Type(data): {type(data)}')
 keys = data[0].keys()
 print(f'Keys: {keys}')
 
-postId, id_field, name, email, body = ([] for i in range(5))
+postId, id_field, name, email, body = ([] for i in range(5))    # Declare multiple empty lists using list comprehensions
 
-for i in data:
-    postId.append(i["postId"])
-    id_field.append(i["id"])
-    name.append(i["name"])
-    email.append(i["email"])
-    body.append(i["body"])
+for i in data:  # Data is a list (each item is a dict object)
+    postId.append(i.get("postId"))  # Create individual series per attribute
+    id_field.append(i.get("id"))    # dict.get returns None if key not found
+    name.append(i.get("name"))
+    email.append(i.get("email"))
+    body.append(i.get("body"))
 
 df = pd.DataFrame({'A': postId,
                    'B': id_field,
